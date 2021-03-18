@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--创建spring的配置文件：xml->ConfiguratonFile->config-->
+    <!--
+        beans是根目录，里面可以有多个bean标签，一个bean标签相当于声明一个java对象
+        bean标签中：id：对象的自定义名称（唯一值）
+                    class：类的全名（不能为接口，spring底层是用反射机制创建对象，必须是类）
+    -->
+    <!--
+        以下bean相当于spring完成：SomeService s = new SomeServiceImpl();
+        spring把创建好的对象放在map中,spring中有一个map是存放对象的：
+        springMap.put(id值，对象)
+        eg：springMap.put("someService",new SomeServiceImpl())
+    -->
+    <bean id="someService" class="com.bjpowernode.service.impl.SomeServiceImpl"></bean>
+    <bean id="someService1" class="com.bjpowernode.service.impl.SomeServiceImpl"></bean>
+</beans>
